@@ -10,11 +10,14 @@
     <h1>Baking Bread</h1>
   </header>
 
-  {% with messages = get_flashed_messages() %}
-    {% if messages %}
-      <div class="flash">{{ messages[0] }}</div>
-    {% endif %}
-  {% endwith %}
+{% with mensagens = get_flashed_messages() %}
+  {% if mensagens %}
+    {% for msg in mensagens %}
+      <p style="color: lightgreen;">{{ msg }}</p>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
 
   <main>
     <h2>Inscreva-se no curso</h2>
